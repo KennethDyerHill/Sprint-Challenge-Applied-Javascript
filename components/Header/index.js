@@ -10,24 +10,25 @@
 // And add it to the DOM in the .headerContainer component
 
 function Header(data) {
-    const newHeader = document.createElement('div');
-    const headerDate = document.createElement('span');
-    const headerTitle = document.createElement('h1');
-    const headerTemp = document.createElement('span');
-
+    const header = document.createElement("div");
     header.classList.add('header');
+
+    const headerDate = document.createElement('span');
+    header.appendChild(headerDate);
+    headerDate.classList.add('date');
+    headerDate.textContent = data.date;
+
+    const headerTitle = document.createElement('h1');
+    header.appendChild(headerTitle)
+    headerDate.classList.add('temp');
     headerTitle.textContent = data.title;
 
-    headerDate.classList.add('date');
-    newHeader.textContent = data.header;
-    headerDate.textContent = data.date;
-    headerTitle.textContent = data.title;
+    const headerTemp = document.createElement('span');
+    header.appendChild(headerTemp);
     headerTemp.textContent = data.temp;
 
-    headerContainer.appendChild(newHeader);
-    headerContainer.appendChild(headerDate);
-    headerContainer.appendChild(headerTitle);
-    headerContainer.appendChild(headerTemp);
-
-    return header = newheader;
+    const headerContainer =  document.querySelector(".header-container")
+    headerContainer.appendChild(header);
 }
+
+Header({title: 'Lambda Times', date: 'SMARCH 28, 2019', temp: '98°'});
