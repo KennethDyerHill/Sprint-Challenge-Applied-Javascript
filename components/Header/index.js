@@ -24,7 +24,8 @@ function Header(data) {
     headerTitle.textContent = data.title;
     headerTemp.textContent = data.temp;
 
-    header.appendChild(headerDate);
-    header.appendChild(headerTitle);
-    header.appendChild(headerTemp);
+    headerContainer.appendChild(header);
+    headerContainer.appendChild(headerDate);
+    headerContainer.appendChild(headerTitle);
+    headerContainer.appendChild(headerTemp);
 }
